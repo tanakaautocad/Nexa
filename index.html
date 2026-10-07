@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Nexa Accounting | Financial Clarity</title>
+<title>Nexa Accounting | Freelance Bookkeeping</title>
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap');
@@ -12,7 +12,7 @@
 :root {
   --navy: #06101d;
   --navy2: #0a1727;
-  --card: rgba(16,32,50,.72);
+  --card: rgba(16,32,50,.75);
   --teal: #36d6c2;
   --blue: #4c8dff;
   --white: #f7fbff;
@@ -34,6 +34,7 @@ body {
   font-family: "DM Sans", sans-serif;
   background: var(--navy);
   color: var(--white);
+  line-height: 1.6;
   overflow-x: hidden;
 }
 
@@ -42,12 +43,16 @@ a {
   color: inherit;
 }
 
+button {
+  font-family: inherit;
+}
+
 .container {
   width: min(1180px, 90%);
   margin: auto;
 }
 
-/* ================= NAV ================= */
+/* ================= NAVIGATION ================= */
 
 header {
   position: fixed;
@@ -55,7 +60,7 @@ header {
   left: 0;
   width: 100%;
   z-index: 1000;
-  background: rgba(6,16,29,.72);
+  background: rgba(6,16,29,.78);
   backdrop-filter: blur(18px);
   border-bottom: 1px solid rgba(255,255,255,.06);
 }
@@ -117,6 +122,7 @@ nav {
   align-items: center;
   position: relative;
   overflow: hidden;
+
   background:
     radial-gradient(circle at 15% 30%, rgba(54,214,194,.10), transparent 28%),
     radial-gradient(circle at 85% 45%, rgba(76,141,255,.13), transparent 32%);
@@ -126,10 +132,13 @@ nav {
   position: absolute;
   inset: 0;
   opacity: .22;
+
   background-image:
     linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px),
     linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px);
+
   background-size: 55px 55px;
+
   mask-image: linear-gradient(to bottom, black, transparent);
 }
 
@@ -143,12 +152,18 @@ nav {
   background: var(--teal);
   right: -200px;
   top: 100px;
+
   animation: glowMove 7s ease-in-out infinite alternate;
 }
 
 @keyframes glowMove {
-  from { transform: translateY(0); }
-  to { transform: translateY(80px); }
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(80px);
+  }
 }
 
 .hero-grid {
@@ -165,49 +180,73 @@ nav {
 }
 
 @keyframes heroIn {
+
   from {
     opacity: 0;
     transform: translateY(35px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
   }
+
 }
 
 .badge {
   display: inline-flex;
   align-items: center;
   gap: 8px;
+
   color: var(--teal);
+
   border: 1px solid rgba(54,214,194,.25);
+
   background: rgba(54,214,194,.07);
+
   padding: 9px 15px;
+
   border-radius: 50px;
+
   font-size: 12px;
+
   letter-spacing: 1.5px;
+
   font-weight: 700;
+
   margin-bottom: 27px;
 }
 
 .badge-dot {
   width: 7px;
   height: 7px;
+
   border-radius: 50%;
+
   background: var(--teal);
+
   box-shadow: 0 0 12px var(--teal);
+
   animation: pulse 2s infinite;
 }
 
 @keyframes pulse {
-  50% { opacity: .35; }
+
+  50% {
+    opacity: .35;
+  }
+
 }
 
 h1 {
   font-family: "Manrope", sans-serif;
+
   font-size: clamp(54px, 6.5vw, 88px);
+
   line-height: .98;
+
   letter-spacing: -4px;
+
   margin-bottom: 28px;
 }
 
@@ -217,202 +256,260 @@ h1 span {
 
 .hero-text {
   color: var(--muted);
+
   max-width: 620px;
+
   font-size: 18px;
+
   line-height: 1.8;
+
   margin-bottom: 35px;
 }
 
 .buttons {
   display: flex;
+
   gap: 14px;
+
   flex-wrap: wrap;
 }
 
 .primary {
   background: var(--teal);
+
   color: #06131d;
+
   padding: 15px 25px;
+
   border-radius: 9px;
+
   font-weight: 800;
+
   transition: .25s;
 }
 
 .primary:hover {
   transform: translateY(-3px);
+
   box-shadow: 0 15px 35px rgba(54,214,194,.2);
 }
 
 .secondary {
   border: 1px solid #30445b;
+
   padding: 15px 25px;
+
   border-radius: 9px;
+
   color: #dbe5ef;
+
   transition: .25s;
 }
 
 .secondary:hover {
   border-color: var(--teal);
+
   color: var(--teal);
 }
 
-/* ================= DASHBOARD ================= */
+/* ================= REPORT VISUAL ================= */
 
-.dashboard-wrap {
+.report-wrap {
   position: relative;
-  animation: dashboardIn 1.2s .2s ease both;
+
+  animation: reportIn 1.2s .2s ease both;
 }
 
-@keyframes dashboardIn {
+@keyframes reportIn {
+
   from {
     opacity: 0;
     transform: translateX(40px);
   }
+
   to {
     opacity: 1;
     transform: translateX(0);
   }
+
 }
 
-.dashboard {
-  background: rgba(12,29,47,.82);
+.report-panel {
+  background: rgba(12,29,47,.85);
+
   border: 1px solid rgba(255,255,255,.10);
+
   border-radius: 22px;
-  padding: 24px;
+
+  padding: 25px;
+
   box-shadow:
     0 35px 80px rgba(0,0,0,.35),
     inset 0 1px rgba(255,255,255,.04);
+
   backdrop-filter: blur(20px);
-  transform: perspective(1000px) rotateY(-4deg) rotateX(2deg);
+
+  transform:
+    perspective(1000px)
+    rotateY(-4deg);
+
   transition: .5s;
 }
 
-.dashboard:hover {
-  transform: perspective(1000px) rotateY(0) rotateX(0);
+.report-panel:hover {
+  transform:
+    perspective(1000px)
+    rotateY(0);
 }
 
-.dash-top {
+.report-top {
   display: flex;
-  justify-content: space-between;
+
   align-items: center;
+
+  justify-content: space-between;
+
   margin-bottom: 25px;
 }
 
-.dash-title {
-  font-size: 13px;
-  color: var(--muted);
-}
-
-.dash-status {
-  font-size: 11px;
-  color: var(--teal);
-  background: rgba(54,214,194,.08);
-  padding: 6px 10px;
-  border-radius: 20px;
-}
-
-.balance {
-  font-family: "Manrope", sans-serif;
-  font-size: 35px;
-  font-weight: 800;
-  margin-bottom: 3px;
-}
-
-.positive {
-  color: var(--teal);
-  font-size: 12px;
-}
-
-.chart {
-  height: 170px;
-  margin-top: 25px;
-  position: relative;
-  overflow: hidden;
-  border-bottom: 1px solid rgba(255,255,255,.08);
-}
-
-.chart-lines {
-  position: absolute;
-  inset: 0;
-  background:
-    linear-gradient(rgba(255,255,255,.05) 1px, transparent 1px);
-  background-size: 100% 34px;
-}
-
-svg {
-  width: 100%;
-  height: 100%;
-  overflow: visible;
-}
-
-.chart-line {
-  fill: none;
-  stroke: var(--teal);
-  stroke-width: 3;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-dasharray: 500;
-  stroke-dashoffset: 500;
-  animation: drawChart 2s 1s forwards ease;
-}
-
-@keyframes drawChart {
-  to { stroke-dashoffset: 0; }
-}
-
-.dash-stats {
-  display: grid;
-  grid-template-columns: repeat(3,1fr);
-  gap: 10px;
-  margin-top: 18px;
-}
-
-.stat {
-  background: rgba(255,255,255,.035);
-  border: 1px solid rgba(255,255,255,.05);
-  border-radius: 10px;
-  padding: 13px;
-}
-
-.stat small {
-  color: #72869a;
-  display: block;
-  font-size: 10px;
-  margin-bottom: 5px;
-}
-
-.stat strong {
+.report-title {
   font-size: 14px;
+
+  font-weight: 700;
 }
 
-.floating-card {
+.report-tag {
+  color: var(--teal);
+
+  background: rgba(54,214,194,.08);
+
+  padding: 6px 10px;
+
+  border-radius: 20px;
+
+  font-size: 10px;
+}
+
+.report-list {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 10px;
+}
+
+.report-item {
+  display: flex;
+
+  align-items: center;
+
+  gap: 14px;
+
+  padding: 15px;
+
+  border-radius: 11px;
+
+  background: rgba(255,255,255,.035);
+
+  border: 1px solid rgba(255,255,255,.055);
+
+  transition: .3s;
+}
+
+.report-item:hover {
+  transform: translateX(7px);
+
+  background: rgba(54,214,194,.055);
+
+  border-color: rgba(54,214,194,.2);
+}
+
+.report-icon {
+  width: 36px;
+  height: 36px;
+
+  display: grid;
+
+  place-items: center;
+
+  background: rgba(54,214,194,.10);
+
+  border-radius: 9px;
+
+  color: var(--teal);
+
+  font-size: 11px;
+
+  font-weight: 800;
+}
+
+.report-info {
+  flex: 1;
+}
+
+.report-info strong {
+  display: block;
+
+  font-size: 13px;
+}
+
+.report-info span {
+  display: block;
+
+  color: #71869a;
+
+  font-size: 10px;
+
+  margin-top: 2px;
+}
+
+.report-arrow {
+  color: #4f657b;
+}
+
+.floating-note {
   position: absolute;
-  right: -35px;
-  bottom: -35px;
+
+  right: -30px;
+
+  bottom: -28px;
+
   background: #11263a;
+
   border: 1px solid rgba(255,255,255,.10);
+
   padding: 15px 18px;
+
   border-radius: 13px;
+
   box-shadow: 0 20px 40px rgba(0,0,0,.3);
+
   animation: float 4s ease-in-out infinite;
 }
 
-@keyframes float {
-  50% { transform: translateY(-12px); }
-}
-
-.floating-card small {
+.floating-note small {
   color: var(--muted);
+
   display: block;
+
   font-size: 10px;
 }
 
-.floating-card strong {
-  font-size: 17px;
+.floating-note strong {
+  font-size: 15px;
+
   color: var(--teal);
 }
 
-/* ================= GENERAL ================= */
+@keyframes float {
+
+  50% {
+    transform: translateY(-12px);
+  }
+
+}
+
+/* ================= SECTIONS ================= */
 
 section {
   padding: 120px 0;
@@ -420,26 +517,39 @@ section {
 
 .section-label {
   color: var(--teal);
+
   text-transform: uppercase;
+
   letter-spacing: 2px;
+
   font-size: 11px;
+
   font-weight: 700;
+
   margin-bottom: 13px;
 }
 
 h2 {
   font-family: "Manrope", sans-serif;
+
   font-size: clamp(35px,4vw,52px);
+
   letter-spacing: -2px;
+
   line-height: 1.05;
+
   margin-bottom: 18px;
 }
 
 .section-intro {
   color: var(--muted);
+
   max-width: 670px;
+
   font-size: 16px;
+
   line-height: 1.8;
+
   margin-bottom: 55px;
 }
 
@@ -447,66 +557,101 @@ h2 {
 
 .services {
   background: #091725;
+
   position: relative;
 }
 
 .services::before {
   content: "";
+
   position: absolute;
+
   width: 350px;
   height: 350px;
+
   border-radius: 50%;
+
   background: var(--blue);
+
   filter: blur(150px);
+
   opacity: .07;
+
   left: -200px;
+
   top: 200px;
 }
 
 .service-grid {
   display: grid;
+
   grid-template-columns: repeat(2,1fr);
+
   gap: 18px;
 }
 
 .service-card {
   background: var(--card);
+
   border: 1px solid var(--line);
+
   border-radius: 16px;
+
   overflow: hidden;
+
   transition: .3s;
+
   backdrop-filter: blur(12px);
 }
 
 .service-card:hover {
   transform: translateY(-5px);
+
   border-color: rgba(54,214,194,.4);
+
   box-shadow: 0 20px 50px rgba(0,0,0,.18);
 }
 
 .service-header {
   width: 100%;
+
   border: 0;
+
   background: transparent;
+
   color: white;
+
   padding: 28px;
+
   display: flex;
+
   align-items: center;
+
   gap: 20px;
+
   text-align: left;
+
   cursor: pointer;
 }
 
 .service-number {
   width: 48px;
   height: 48px;
+
   min-width: 48px;
+
   display: grid;
+
   place-items: center;
+
   border-radius: 11px;
+
   background: rgba(54,214,194,.09);
+
   color: var(--teal);
+
   font-weight: 800;
+
   font-size: 12px;
 }
 
@@ -516,30 +661,39 @@ h2 {
 
 .service-title h3 {
   font-size: 18px;
+
   margin-bottom: 3px;
 }
 
 .service-title p {
   color: #71869a;
+
   font-size: 12px;
 }
 
 .arrow {
   color: var(--teal);
+
   transition: .3s;
+
   font-size: 20px;
 }
 
 .service-content {
   max-height: 0;
+
   overflow: hidden;
+
   transition: max-height .4s ease;
 }
 
 .service-content-inner {
   padding: 0 28px 28px 96px;
+
   color: var(--muted);
+
   font-size: 14px;
+
   line-height: 1.8;
 }
 
@@ -557,100 +711,206 @@ h2 {
 
 /* ================= ABOUT ================= */
 
+.about {
+  position: relative;
+}
+
 .about-grid {
   display: grid;
+
   grid-template-columns: 1fr 1fr;
+
   gap: 75px;
+
   align-items: center;
+}
+
+.about-text {
+  color: var(--muted);
+
+  max-width: 600px;
+
+  line-height: 1.9;
+
+  margin-bottom: 20px;
+}
+
+.freelance-note {
+  margin-top: 30px;
+
+  padding: 20px;
+
+  border-left: 3px solid var(--teal);
+
+  background: rgba(54,214,194,.045);
+
+  border-radius: 0 10px 10px 0;
+
+  color: #b9c8d6;
+
+  font-size: 14px;
 }
 
 .about-box {
   padding: 50px;
+
   border-radius: 22px;
+
   border: 1px solid var(--line);
+
   background:
-    radial-gradient(circle at top right, rgba(54,214,194,.12), transparent 35%),
+    radial-gradient(
+      circle at top right,
+      rgba(54,214,194,.12),
+      transparent 35%
+    ),
     #0d1c2d;
+}
+
+.about-box h3 {
+  font-family: "Manrope";
+
+  font-size: 25px;
+
+  margin-bottom: 18px;
 }
 
 .check {
   color: #c8d5e2;
+
   margin: 19px 0;
 }
 
 .check span {
   color: var(--teal);
+
   margin-right: 10px;
 }
 
-/* ================= NUMBERS ================= */
+/* ================= WHY NEXA ================= */
 
-.numbers {
-  background: #0b1828;
+.why {
+  background: #091725;
 }
 
-.number-grid {
+.why-grid {
   display: grid;
+
   grid-template-columns: repeat(3,1fr);
+
   gap: 20px;
 }
 
-.number-card {
-  text-align: center;
-  padding: 35px 20px;
-  border: 1px solid var(--line);
+.why-card {
+  padding: 32px;
+
   background: rgba(255,255,255,.025);
-  border-radius: 15px;
+
+  border: 1px solid var(--line);
+
+  border-radius: 16px;
+
+  transition: .3s;
 }
 
-.number {
-  font-family: "Manrope";
-  font-size: 40px;
-  font-weight: 800;
+.why-card:hover {
+  transform: translateY(-6px);
+
+  border-color: rgba(54,214,194,.35);
+}
+
+.why-icon {
+  width: 45px;
+  height: 45px;
+
+  display: grid;
+
+  place-items: center;
+
+  border-radius: 10px;
+
+  background: rgba(54,214,194,.08);
+
   color: var(--teal);
+
+  font-weight: 800;
+
+  margin-bottom: 20px;
 }
 
-.number-card p {
+.why-card h3 {
+  font-size: 18px;
+
+  margin-bottom: 10px;
+}
+
+.why-card p {
   color: var(--muted);
-  font-size: 13px;
-  margin-top: 5px;
+
+  font-size: 14px;
+
+  line-height: 1.8;
 }
 
 /* ================= CONTACT ================= */
 
 .contact {
   position: relative;
+
   overflow: hidden;
 }
 
 .contact-box {
   text-align: center;
+
   padding: 90px 30px;
+
   border-radius: 25px;
+
   border: 1px solid rgba(54,214,194,.15);
+
   background:
-    radial-gradient(circle at center, rgba(54,214,194,.10), transparent 50%),
+    radial-gradient(
+      circle at center,
+      rgba(54,214,194,.10),
+      transparent 50%
+    ),
     #0c1b2c;
 }
 
 .contact-box p {
   color: var(--muted);
+
   max-width: 570px;
+
   margin: 15px auto 32px;
+}
+
+.contact-note {
+  margin-top: 22px;
+
+  color: #61758a;
+
+  font-size: 12px;
 }
 
 /* ================= FOOTER ================= */
 
 footer {
   border-top: 1px solid var(--line);
+
   padding: 30px 0;
+
   color: #64788d;
+
   font-size: 12px;
 }
 
 .footer-inner {
   display: flex;
+
   justify-content: space-between;
+
   gap: 20px;
 }
 
@@ -658,12 +918,17 @@ footer {
 
 .reveal {
   opacity: 0;
+
   transform: translateY(30px);
-  transition: opacity .8s ease, transform .8s ease;
+
+  transition:
+    opacity .8s ease,
+    transform .8s ease;
 }
 
 .reveal.visible {
   opacity: 1;
+
   transform: translateY(0);
 }
 
@@ -682,6 +947,7 @@ footer {
 
   .hero {
     padding-top: 120px;
+
     padding-bottom: 80px;
   }
 
@@ -693,19 +959,16 @@ footer {
     font-size: 55px;
   }
 
-  .dashboard {
+  .report-panel {
     transform: none;
   }
 
-  .floating-card {
+  .floating-note {
     right: 5px;
   }
 
-  .service-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .number-grid {
+  .service-grid,
+  .why-grid {
     grid-template-columns: 1fr;
   }
 
@@ -716,26 +979,25 @@ footer {
   .footer-inner {
     flex-direction: column;
   }
+
 }
 
 @media(max-width:500px) {
 
   h1 {
     font-size: 46px;
+
     letter-spacing: -2.5px;
   }
 
-  .dash-stats {
-    grid-template-columns: 1fr;
-  }
-
-  .floating-card {
+  .floating-note {
     display: none;
   }
 
   .service-content-inner {
     padding-left: 28px;
   }
+
 }
 </style>
 </head>
@@ -743,6 +1005,7 @@ footer {
 <body>
 
 <header>
+
 <nav class="container">
 
   <div class="logo">
@@ -750,151 +1013,310 @@ footer {
   </div>
 
   <ul class="nav-links">
-    <li><a href="#services">Services</a></li>
-    <li><a href="#about">About</a></li>
-    <li><a href="#contact">Contact</a></li>
+
+    <li>
+      <a href="#services">
+        Services
+      </a>
+    </li>
+
+    <li>
+      <a href="#about">
+        About
+      </a>
+    </li>
+
+    <li>
+      <a href="#why">
+        Why Nexa
+      </a>
+    </li>
+
+    <li>
+      <a href="#contact">
+        Contact
+      </a>
+    </li>
+
   </ul>
 
-  <a href="#contact" class="nav-button">
+  <a
+    href="#contact"
+    class="nav-button">
+
     Get Started
+
   </a>
 
 </nav>
+
 </header>
 
 
 <main>
 
-<!-- HERO -->
+
+<!-- ================= HERO ================= -->
 
 <section class="hero">
 
 <div class="grid-bg"></div>
+
 <div class="glow"></div>
+
 
 <div class="container hero-grid">
 
+
   <div class="hero-content">
 
+
     <div class="badge">
+
       <span class="badge-dot"></span>
-      BOOKKEEPING & FINANCIAL REPORTING
+
+      FREELANCE BOOKKEEPING & FINANCIAL REPORTING
+
     </div>
 
+
     <h1>
+
       Financial clarity.<br>
+
       <span>Better decisions.</span>
+
     </h1>
 
+
     <p class="hero-text">
-      Nexa Accounting helps businesses organise their books,
-      understand their numbers and make better financial decisions
-      with clear, reliable reporting.
+
+      Nexa Accounting provides reliable bookkeeping and
+      financial reporting for businesses that want their
+      numbers organised, clear and easy to understand.
+
     </p>
+
 
     <div class="buttons">
 
-      <a href="#contact" class="primary">
+
+      <a
+        href="#contact"
+        class="primary">
+
         Let's Talk
+
       </a>
 
-      <a href="#services" class="secondary">
+
+      <a
+        href="#services"
+        class="secondary">
+
         Explore Services
+
       </a>
+
 
     </div>
+
 
   </div>
 
 
-  <!-- DASHBOARD -->
+  <!-- REPORT VISUAL -->
 
-  <div class="dashboard-wrap">
+  <div class="report-wrap">
 
-    <div class="dashboard">
 
-      <div class="dash-top">
+    <div class="report-panel">
 
-        <div class="dash-title">
-          Financial Overview
+
+      <div class="report-top">
+
+        <div class="report-title">
+          Financial Reporting
         </div>
 
-        <div class="dash-status">
-          ● Updated
-        </div>
-
-      </div>
-
-      <div class="balance">
-        $84,620
-      </div>
-
-      <div class="positive">
-        ↑ 12.8% this month
-      </div>
-
-      <div class="chart">
-
-        <div class="chart-lines"></div>
-
-        <svg viewBox="0 0 500 170" preserveAspectRatio="none">
-
-          <polyline
-            class="chart-line"
-            points="
-            0,140
-            45,125
-            85,132
-            125,105
-            165,112
-            205,80
-            245,92
-            285,60
-            325,72
-            365,48
-            405,58
-            450,28
-            500,18
-            "
-          />
-
-        </svg>
-
-      </div>
-
-      <div class="dash-stats">
-
-        <div class="stat">
-          <small>Revenue</small>
-          <strong>$42.8K</strong>
-        </div>
-
-        <div class="stat">
-          <small>Expenses</small>
-          <strong>$18.4K</strong>
-        </div>
-
-        <div class="stat">
-          <small>Net Profit</small>
-          <strong style="color:#36d6c2;">
-            $24.4K
-          </strong>
+        <div class="report-tag">
+          NEXA
         </div>
 
       </div>
+
+
+      <div class="report-list">
+
+
+        <div class="report-item">
+
+          <div class="report-icon">
+            P&L
+          </div>
+
+          <div class="report-info">
+
+            <strong>
+              Profit & Loss
+            </strong>
+
+            <span>
+              Business performance
+            </span>
+
+          </div>
+
+          <div class="report-arrow">
+            →
+          </div>
+
+        </div>
+
+
+        <div class="report-item">
+
+          <div class="report-icon">
+            BS
+          </div>
+
+          <div class="report-info">
+
+            <strong>
+              Balance Sheet
+            </strong>
+
+            <span>
+              Financial position
+            </span>
+
+          </div>
+
+          <div class="report-arrow">
+            →
+          </div>
+
+        </div>
+
+
+        <div class="report-item">
+
+          <div class="report-icon">
+            CF
+          </div>
+
+          <div class="report-info">
+
+            <strong>
+              Cash Flow
+            </strong>
+
+            <span>
+              Cash movements
+            </span>
+
+          </div>
+
+          <div class="report-arrow">
+            →
+          </div>
+
+        </div>
+
+
+        <div class="report-item">
+
+          <div class="report-icon">
+            AR
+          </div>
+
+          <div class="report-info">
+
+            <strong>
+              AP & AR Aging
+            </strong>
+
+            <span>
+              Outstanding balances
+            </span>
+
+          </div>
+
+          <div class="report-arrow">
+            →
+          </div>
+
+        </div>
+
+
+        <div class="report-item">
+
+          <div class="report-icon">
+            EA
+          </div>
+
+          <div class="report-info">
+
+            <strong>
+              Expense Analysis
+            </strong>
+
+            <span>
+              Spending insights
+            </span>
+
+          </div>
+
+          <div class="report-arrow">
+            →
+          </div>
+
+        </div>
+
+
+        <div class="report-item">
+
+          <div class="report-icon">
+            BR
+          </div>
+
+          <div class="report-info">
+
+            <strong>
+              Bank Reconciliation
+            </strong>
+
+            <span>
+              Accurate bank records
+            </span>
+
+          </div>
+
+          <div class="report-arrow">
+            →
+          </div>
+
+        </div>
+
+
+      </div>
+
 
     </div>
 
 
-    <div class="floating-card">
+    <div class="floating-note">
 
-      <small>Cash Flow</small>
+      <small>
+        Your numbers
+      </small>
 
       <strong>
-        +18.4%
+        Made clearer.
       </strong>
 
     </div>
+
 
   </div>
 
@@ -903,104 +1325,174 @@ footer {
 </section>
 
 
-<!-- SERVICES -->
+<!-- ================= SERVICES ================= -->
 
-<section class="services" id="services">
+<section
+  class="services"
+  id="services">
+
 
 <div class="container reveal">
+
 
   <div class="section-label">
     What Nexa Provides
   </div>
 
+
   <h2>
-    Everything you need<br>
-    to understand your numbers.
+
+    Financial services<br>
+
+    built around your business.
+
   </h2>
 
+
   <p class="section-intro">
-    Select a service to explore what Nexa Accounting can
-    provide for your business.
+
+    Click each service to explore what Nexa Accounting
+    can provide.
+
   </p>
 
 
   <div class="service-grid">
 
 
+    <!-- 01 -->
+
     <div class="service-card">
+
 
       <button class="service-header">
 
-        <div class="service-number">01</div>
 
-        <div class="service-title">
-          <h3>Bookkeeping</h3>
-          <p>Accurate financial records</p>
+        <div class="service-number">
+          01
         </div>
 
-        <div class="arrow">↓</div>
+
+        <div class="service-title">
+
+          <h3>
+            Bookkeeping
+          </h3>
+
+          <p>
+            Accurate financial records
+          </p>
+
+        </div>
+
+
+        <div class="arrow">
+          ↓
+        </div>
+
 
       </button>
+
 
       <div class="service-content">
 
         <div class="service-content-inner">
 
-          Accurate recording and organisation of your
-          business transactions, keeping your books
-          structured and up to date.
+          Accurate recording and organisation of business
+          transactions, keeping your books structured,
+          organised and up to date.
 
         </div>
 
       </div>
 
+
     </div>
 
 
+    <!-- 02 -->
+
     <div class="service-card">
+
 
       <button class="service-header">
 
-        <div class="service-number">02</div>
 
-        <div class="service-title">
-          <h3>AP & AR Aging</h3>
-          <p>Outstanding balances</p>
+        <div class="service-number">
+          02
         </div>
 
-        <div class="arrow">↓</div>
+
+        <div class="service-title">
+
+          <h3>
+            AP & AR Aging
+          </h3>
+
+          <p>
+            Outstanding balances
+          </p>
+
+        </div>
+
+
+        <div class="arrow">
+          ↓
+        </div>
+
 
       </button>
+
 
       <div class="service-content">
 
         <div class="service-content-inner">
 
-          Clear Accounts Payable and Accounts Receivable
-          aging reports, helping you monitor outstanding
+          Accounts Payable and Accounts Receivable aging
+          reports providing visibility into outstanding
           supplier and customer balances.
 
         </div>
 
       </div>
 
+
     </div>
 
 
+    <!-- 03 -->
+
     <div class="service-card">
+
 
       <button class="service-header">
 
-        <div class="service-number">03</div>
 
-        <div class="service-title">
-          <h3>Bank Reconciliation</h3>
-          <p>Accurate bank records</p>
+        <div class="service-number">
+          03
         </div>
 
-        <div class="arrow">↓</div>
+
+        <div class="service-title">
+
+          <h3>
+            Bank Reconciliation
+          </h3>
+
+          <p>
+            Accurate bank records
+          </p>
+
+        </div>
+
+
+        <div class="arrow">
+          ↓
+        </div>
+
 
       </button>
+
 
       <div class="service-content">
 
@@ -1014,272 +1506,474 @@ footer {
 
       </div>
 
+
     </div>
 
 
+    <!-- 04 -->
+
     <div class="service-card">
+
 
       <button class="service-header">
 
-        <div class="service-number">04</div>
 
-        <div class="service-title">
-          <h3>Expense Analysis</h3>
-          <p>Understand your spending</p>
+        <div class="service-number">
+          04
         </div>
 
-        <div class="arrow">↓</div>
+
+        <div class="service-title">
+
+          <h3>
+            Expense Analysis
+          </h3>
+
+          <p>
+            Understand your spending
+          </p>
+
+        </div>
+
+
+        <div class="arrow">
+          ↓
+        </div>
+
 
       </button>
+
 
       <div class="service-content">
 
         <div class="service-content-inner">
 
-          Detailed review of business expenses to identify
-          spending patterns, major cost drivers and
-          opportunities for better control.
+          Review and categorisation of business expenses
+          to identify spending patterns, major cost drivers
+          and opportunities for better control.
 
         </div>
 
       </div>
 
+
     </div>
 
 
+    <!-- 05 -->
+
     <div class="service-card">
+
 
       <button class="service-header">
 
-        <div class="service-number">05</div>
 
-        <div class="service-title">
-          <h3>Cash Flow</h3>
-          <p>Track your cash position</p>
+        <div class="service-number">
+          05
         </div>
 
-        <div class="arrow">↓</div>
+
+        <div class="service-title">
+
+          <h3>
+            Cash Flow
+          </h3>
+
+          <p>
+            Understand your cash position
+          </p>
+
+        </div>
+
+
+        <div class="arrow">
+          ↓
+        </div>
+
 
       </button>
+
 
       <div class="service-content">
 
         <div class="service-content-inner">
 
           Clear cash flow reporting showing money moving
-          into and out of your business, helping you
-          understand your liquidity.
+          into and out of the business, helping you
+          understand liquidity and cash position.
 
         </div>
 
       </div>
 
+
     </div>
 
 
+    <!-- 06 -->
+
     <div class="service-card">
+
 
       <button class="service-header">
 
-        <div class="service-number">06</div>
 
-        <div class="service-title">
-          <h3>P&L & Balance Sheet</h3>
-          <p>Understand financial performance</p>
+        <div class="service-number">
+          06
         </div>
 
-        <div class="arrow">↓</div>
+
+        <div class="service-title">
+
+          <h3>
+            P&L & Balance Sheet
+          </h3>
+
+          <p>
+            Financial performance & position
+          </p>
+
+        </div>
+
+
+        <div class="arrow">
+          ↓
+        </div>
+
 
       </button>
+
 
       <div class="service-content">
 
         <div class="service-content-inner">
 
-          Professional Profit & Loss and Balance Sheet
-          reporting giving you a clear view of financial
-          performance and position.
+          Profit & Loss and Balance Sheet reporting giving
+          business owners a clearer view of financial
+          performance and financial position.
 
         </div>
 
       </div>
 
+
     </div>
 
+
   </div>
+
 
 </div>
 
 </section>
 
 
-<!-- ABOUT -->
+<!-- ================= ABOUT ================= -->
 
-<section id="about">
+<section
+  class="about"
+  id="about">
+
 
 <div class="container about-grid reveal">
 
+
   <div>
+
 
     <div class="section-label">
       About Nexa
     </div>
 
+
     <h2>
-      Your numbers deserve clarity.
+
+      Independent service.<br>
+
+      Professional standards.
+
     </h2>
 
-    <p class="section-intro">
-      Nexa Accounting turns everyday financial data into
-      information that is easier to understand and act on.
+
+    <p class="about-text">
+
+      Nexa Accounting is an independent freelance
+      bookkeeping and financial reporting service
+      focused on helping businesses keep their
+      financial information organised, accurate
+      and useful.
+
     </p>
 
-    <p class="check">
-      <span>✓</span>
-      Accurate financial records
+
+    <p class="about-text">
+
+      As a freelance service, Nexa works directly
+      with clients rather than operating from a
+      traditional accounting office. This allows
+      for a more personal, flexible and focused
+      approach to each client's bookkeeping and
+      reporting needs.
+
     </p>
 
-    <p class="check">
-      <span>✓</span>
-      Clear financial reporting
-    </p>
 
-    <p class="check">
-      <span>✓</span>
-      Professional and confidential service
-    </p>
+    <div class="freelance-note">
 
-    <p class="check">
-      <span>✓</span>
-      Practical financial insight
-    </p>
+      <strong>
+        Freelance & flexible
+      </strong>
+
+      <br>
+
+      Direct professional support without the
+      unnecessary overhead or complexity of a
+      traditional office.
+
+    </div>
+
 
   </div>
 
 
   <div class="about-box">
 
+
     <div class="section-label">
       The Nexa approach
     </div>
 
-    <h2>
+
+    <h3>
+
       Simple.<br>
       Accurate.<br>
       Reliable.
-    </h2>
 
-    <p style="color:#91a4b8; line-height:1.8;">
-      We believe bookkeeping should do more than
-      record transactions. It should give business owners
-      a clearer picture of where they are and where
-      they're going.
+    </h3>
+
+
+    <p style="color:#91a4b8; line-height:1.9;">
+
+      Good bookkeeping is more than recording
+      transactions. It is about turning financial
+      information into something you can actually
+      understand and use.
+
     </p>
 
+
+    <br>
+
+
+    <p class="check">
+
+      <span>✓</span>
+
+      Clear financial records
+
+    </p>
+
+
+    <p class="check">
+
+      <span>✓</span>
+
+      Practical financial reporting
+
+    </p>
+
+
+    <p class="check">
+
+      <span>✓</span>
+
+      Direct communication
+
+    </p>
+
+
+    <p class="check">
+
+      <span>✓</span>
+
+      Flexible freelance service
+
+    </p>
+
+
   </div>
+
 
 </div>
 
 </section>
 
 
-<!-- NUMBERS -->
+<!-- ================= WHY NEXA ================= -->
 
-<section class="numbers">
+<section
+  class="why"
+  id="why">
+
 
 <div class="container reveal">
 
+
   <div class="section-label">
-    Financial clarity
+    Why Nexa
   </div>
 
+
   <h2>
-    See the bigger picture.
+
+    Less complexity.<br>
+
+    More clarity.
+
   </h2>
 
+
   <p class="section-intro">
-    The right reports help you understand your business
-    beyond individual transactions.
+
+    A straightforward bookkeeping service designed
+    around what your business actually needs.
+
   </p>
 
 
-  <div class="number-grid">
+  <div class="why-grid">
 
-    <div class="number-card">
 
-      <div class="number counter" data-target="6">
-        0
+    <div class="why-card">
+
+
+      <div class="why-icon">
+        01
       </div>
 
+
+      <h3>
+        Personal
+      </h3>
+
+
       <p>
-        Core financial services
+
+        Work directly with your bookkeeping provider
+        instead of being passed between departments
+        or account managers.
+
       </p>
+
 
     </div>
 
 
-    <div class="number-card">
+    <div class="why-card">
 
-      <div class="number">
-        100%
+
+      <div class="why-icon">
+        02
       </div>
 
+
+      <h3>
+        Flexible
+      </h3>
+
+
       <p>
-        Focus on financial clarity
+
+        Freelance support that can adapt to the needs
+        and scale of your business without unnecessary
+        complexity.
+
       </p>
+
 
     </div>
 
 
-    <div class="number-card">
+    <div class="why-card">
 
-      <div class="number">
-        24/7
+
+      <div class="why-icon">
+        03
       </div>
 
+
+      <h3>
+        Clear
+      </h3>
+
+
       <p>
-        Access to your financial insight
+
+        Financial reports presented in a way that makes
+        your business numbers easier to understand.
+
       </p>
 
+
     </div>
+
 
   </div>
+
 
 </div>
 
 </section>
 
 
-<!-- CONTACT -->
+<!-- ================= CONTACT ================= -->
 
-<section class="contact" id="contact">
+<section
+  class="contact"
+  id="contact">
+
 
 <div class="container reveal">
 
+
   <div class="contact-box">
+
 
     <div class="section-label">
       Get in touch
     </div>
 
+
     <h2>
+
       Let's make your numbers clearer.
+
     </h2>
 
+
     <p>
-      Ready to organise your bookkeeping and get better
-      visibility into your business finances?
+
+      Looking for freelance bookkeeping or financial
+      reporting support? Get in touch with the Nexa
+      Accounting team to discuss your business needs.
+
     </p>
 
-    <div class="buttons" style="justify-content:center;">
+
+    <div
+      class="buttons"
+      style="justify-content:center;">
+
 
       <a
-        href="mailto:isabel@nexaaccounting.com"
+        href="mailto:asma@nexa.com,tanaka@nexa.com"
         class="primary">
 
-        Email Isabel
+        Email Us
 
       </a>
+
 
       <a
         href="#services"
@@ -1289,28 +1983,48 @@ footer {
 
       </a>
 
+
     </div>
 
+
+    <div class="contact-note">
+
+      Freelance Bookkeeping & Financial Reporting
+
+    </div>
+
+
   </div>
+
 
 </div>
 
 </section>
 
+
 </main>
 
+
+<!-- ================= FOOTER ================= -->
 
 <footer>
 
 <div class="container footer-inner">
 
-  <div>
-    © 2026 Nexa Accounting
-  </div>
 
   <div>
-    Bookkeeping & Financial Reporting
+
+    © 2026 Nexa Accounting
+
   </div>
+
+
+  <div>
+
+    Freelance Bookkeeping & Financial Reporting
+
+  </div>
+
 
 </div>
 
@@ -1319,20 +2033,24 @@ footer {
 
 <script>
 
-/* SERVICE ACCORDIONS */
+/* ================= SERVICE ACCORDIONS ================= */
 
-const cards = document.querySelectorAll(".service-card");
+const cards =
+  document.querySelectorAll(".service-card");
 
 cards.forEach(card => {
 
-  const button = card.querySelector(".service-header");
+  const button =
+    card.querySelector(".service-header");
 
   button.addEventListener("click", () => {
 
     cards.forEach(other => {
 
       if (other !== card) {
+
         other.classList.remove("active");
+
       }
 
     });
@@ -1344,69 +2062,39 @@ cards.forEach(card => {
 });
 
 
-/* SCROLL REVEAL */
+/* ================= SCROLL REVEAL ================= */
 
-const observer = new IntersectionObserver(
+const observer =
+  new IntersectionObserver(
 
-  entries => {
+    entries => {
 
-    entries.forEach(entry => {
+      entries.forEach(entry => {
 
-      if (entry.isIntersecting) {
+        if (entry.isIntersecting) {
 
-        entry.target.classList.add("visible");
+          entry.target.classList.add("visible");
 
-      }
-
-    });
-
-  },
-
-  {
-    threshold: 0.12
-  }
-
-);
-
-document.querySelectorAll(".reveal").forEach(el => {
-  observer.observe(el);
-});
-
-
-/* COUNTER */
-
-const counter = document.querySelector(".counter");
-
-const counterObserver = new IntersectionObserver(
-
-  entries => {
-
-    if (entries[0].isIntersecting) {
-
-      let current = 0;
-      const target = Number(counter.dataset.target);
-
-      const timer = setInterval(() => {
-
-        current++;
-
-        counter.textContent = current;
-
-        if (current >= target) {
-          clearInterval(timer);
         }
 
-      }, 150);
+      });
 
-      counterObserver.disconnect();
+    },
 
+    {
+      threshold: 0.12
     }
 
-  }
+  );
 
-);
 
-counterObserver.observe(counter);
+document
+  .querySelectorAll(".reveal")
+  .forEach(el => {
+
+    observer.observe(el);
+
+  });
 
 </script>
 
