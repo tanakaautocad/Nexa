@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nexa Accounting | Bookkeeping & Accounting</title>
+
+  <title>Nexa Accounting | Bookkeeping & Financial Reporting</title>
 
   <style>
     * {
@@ -29,29 +30,31 @@
     }
 
     .container {
-      width: min(1120px, 90%);
+      width: min(1180px, 90%);
       margin: auto;
     }
+
+    /* NAVIGATION */
 
     header {
       position: fixed;
       top: 0;
       width: 100%;
       z-index: 1000;
-      background: rgba(7, 17, 31, 0.9);
-      backdrop-filter: blur(12px);
+      background: rgba(7, 17, 31, 0.92);
+      backdrop-filter: blur(15px);
       border-bottom: 1px solid rgba(255,255,255,0.08);
     }
 
     nav {
-      height: 76px;
+      height: 78px;
       display: flex;
       align-items: center;
       justify-content: space-between;
     }
 
     .logo {
-      font-size: 24px;
+      font-size: 25px;
       font-weight: 800;
       letter-spacing: 1px;
     }
@@ -62,9 +65,9 @@
 
     .nav-links {
       display: flex;
-      gap: 28px;
+      gap: 30px;
       list-style: none;
-      color: #c9d3df;
+      color: #c7d2df;
       font-size: 14px;
     }
 
@@ -75,23 +78,26 @@
     .nav-button {
       background: #36d6c2;
       color: #06131d;
-      padding: 11px 18px;
+      padding: 11px 20px;
       border-radius: 8px;
       font-weight: 700;
     }
+
+    /* HERO */
 
     .hero {
       min-height: 100vh;
       display: flex;
       align-items: center;
-      padding-top: 76px;
+      padding-top: 78px;
+
       background:
-        radial-gradient(circle at 80% 20%, rgba(54,214,194,0.14), transparent 30%),
-        radial-gradient(circle at 10% 80%, rgba(46,111,255,0.12), transparent 30%);
+        radial-gradient(circle at 80% 20%, rgba(54,214,194,0.16), transparent 32%),
+        radial-gradient(circle at 10% 80%, rgba(46,111,255,0.14), transparent 30%);
     }
 
     .hero-content {
-      max-width: 760px;
+      max-width: 850px;
     }
 
     .badge {
@@ -99,17 +105,17 @@
       border: 1px solid rgba(54,214,194,0.35);
       color: #36d6c2;
       background: rgba(54,214,194,0.07);
-      padding: 8px 14px;
+      padding: 9px 16px;
       border-radius: 50px;
       font-size: 13px;
-      margin-bottom: 25px;
+      margin-bottom: 28px;
     }
 
     h1 {
-      font-size: clamp(48px, 7vw, 82px);
-      line-height: 1.02;
-      letter-spacing: -3px;
-      margin-bottom: 25px;
+      font-size: clamp(55px, 8vw, 95px);
+      line-height: 0.98;
+      letter-spacing: -4px;
+      margin-bottom: 30px;
     }
 
     h1 span {
@@ -117,35 +123,37 @@
     }
 
     .hero p {
-      max-width: 620px;
+      max-width: 700px;
       color: #aebdcd;
-      font-size: 19px;
-      margin-bottom: 35px;
+      font-size: 20px;
+      margin-bottom: 38px;
     }
 
     .buttons {
       display: flex;
-      gap: 14px;
+      gap: 15px;
       flex-wrap: wrap;
     }
 
     .primary {
       background: #36d6c2;
       color: #06131d;
-      padding: 14px 24px;
+      padding: 15px 26px;
       border-radius: 9px;
       font-weight: 800;
     }
 
     .secondary {
       border: 1px solid #33465b;
-      padding: 14px 24px;
+      padding: 15px 26px;
       border-radius: 9px;
       color: #dbe5ef;
     }
 
+    /* SECTIONS */
+
     section {
-      padding: 100px 0;
+      padding: 120px 0;
     }
 
     .section-label {
@@ -154,20 +162,23 @@
       letter-spacing: 2px;
       font-size: 12px;
       font-weight: 700;
-      margin-bottom: 12px;
+      margin-bottom: 13px;
     }
 
     h2 {
-      font-size: 42px;
-      letter-spacing: -1px;
-      margin-bottom: 18px;
+      font-size: 46px;
+      letter-spacing: -1.5px;
+      margin-bottom: 20px;
     }
 
     .section-intro {
       color: #9eafc0;
-      max-width: 650px;
-      margin-bottom: 45px;
+      max-width: 680px;
+      margin-bottom: 55px;
+      font-size: 17px;
     }
+
+    /* SERVICES */
 
     .services {
       background: #0b1828;
@@ -175,57 +186,109 @@
 
     .service-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 22px;
     }
 
-    .card {
+    .service-card {
       background: #101f31;
       border: 1px solid #1c3046;
-      padding: 30px;
-      border-radius: 14px;
+      border-radius: 16px;
+      overflow: hidden;
       transition: 0.25s;
     }
 
-    .card:hover {
-      transform: translateY(-5px);
+    .service-card:hover {
+      border-color: rgba(54,214,194,0.55);
+    }
+
+    .service-header {
+      width: 100%;
+      border: none;
+      background: transparent;
+      color: white;
+      padding: 30px;
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      text-align: left;
+      cursor: pointer;
+    }
+
+    .service-number {
+      min-width: 52px;
+      height: 52px;
+      display: grid;
+      place-items: center;
+      border-radius: 11px;
+      background: rgba(54,214,194,0.10);
+      color: #36d6c2;
+      font-weight: 800;
+      font-size: 14px;
+    }
+
+    .service-title {
+      flex: 1;
+    }
+
+    .service-title h3 {
+      font-size: 21px;
+      margin-bottom: 3px;
+    }
+
+    .service-title p {
+      color: #788da2;
+      font-size: 13px;
+    }
+
+    .arrow {
+      color: #36d6c2;
+      font-size: 22px;
+      transition: 0.25s;
+    }
+
+    .service-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease;
+    }
+
+    .service-content-inner {
+      padding: 0 30px 30px 104px;
+      color: #aebdcd;
+      font-size: 15px;
+    }
+
+    .service-content-inner strong {
+      color: #ffffff;
+    }
+
+    .service-card.active .service-content {
+      max-height: 250px;
+    }
+
+    .service-card.active .arrow {
+      transform: rotate(180deg);
+    }
+
+    .service-card.active {
       border-color: #36d6c2;
     }
 
-    .icon {
-      width: 45px;
-      height: 45px;
-      display: grid;
-      place-items: center;
-      border-radius: 10px;
-      background: rgba(54,214,194,0.1);
-      color: #36d6c2;
-      font-size: 21px;
-      margin-bottom: 22px;
-    }
-
-    .card h3 {
-      margin-bottom: 10px;
-      font-size: 20px;
-    }
-
-    .card p {
-      color: #9eafc0;
-      font-size: 15px;
-    }
+    /* ABOUT */
 
     .about-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 70px;
+      gap: 75px;
       align-items: center;
     }
 
     .about-box {
       background: linear-gradient(145deg, #102238, #0b1727);
       border: 1px solid #20364d;
-      padding: 40px;
-      border-radius: 18px;
+      padding: 45px;
+      border-radius: 20px;
     }
 
     .check {
@@ -238,6 +301,8 @@
       margin-right: 10px;
     }
 
+    /* CONTACT */
+
     .contact {
       background: #0b1828;
     }
@@ -246,15 +311,17 @@
       text-align: center;
       background: linear-gradient(145deg, #102238, #0a1625);
       border: 1px solid #20364d;
-      border-radius: 20px;
-      padding: 70px 30px;
+      border-radius: 22px;
+      padding: 85px 30px;
     }
 
     .contact-box p {
       color: #aebdcd;
-      margin: 15px auto 30px;
-      max-width: 550px;
+      margin: 15px auto 32px;
+      max-width: 580px;
     }
+
+    /* FOOTER */
 
     footer {
       padding: 30px 0;
@@ -263,7 +330,10 @@
       font-size: 13px;
     }
 
+    /* MOBILE */
+
     @media (max-width: 800px) {
+
       .nav-links {
         display: none;
       }
@@ -274,11 +344,15 @@
       }
 
       h1 {
-        font-size: 50px;
+        font-size: 54px;
       }
 
       h2 {
-        font-size: 34px;
+        font-size: 36px;
+      }
+
+      .service-content-inner {
+        padding-left: 30px;
       }
     }
   </style>
@@ -289,7 +363,10 @@
 <header>
   <div class="container">
     <nav>
-      <div class="logo">NEXA<span>.</span></div>
+
+      <div class="logo">
+        NEXA<span>.</span>
+      </div>
 
       <ul class="nav-links">
         <li><a href="#services">Services</a></li>
@@ -297,17 +374,28 @@
         <li><a href="#contact">Contact</a></li>
       </ul>
 
-      <a href="#contact" class="nav-button">Get Started</a>
+      <a href="#contact" class="nav-button">
+        Get Started
+      </a>
+
     </nav>
   </div>
 </header>
 
+
 <main>
 
+  <!-- HERO -->
+
   <section class="hero">
+
     <div class="container">
+
       <div class="hero-content">
-        <div class="badge">BOOKKEEPING & ACCOUNTING</div>
+
+        <div class="badge">
+          BOOKKEEPING & FINANCIAL REPORTING
+        </div>
 
         <h1>
           Clear numbers.<br>
@@ -315,167 +403,510 @@
         </h1>
 
         <p>
-          Nexa Accounting provides modern bookkeeping solutions
-          designed to keep your finances organised, accurate and
-          ready for growth.
+          Nexa Accounting provides organised bookkeeping and
+          financial reporting designed to give businesses clarity,
+          control and confidence.
         </p>
 
         <div class="buttons">
-          <a href="#contact" class="primary">Let's Talk</a>
-          <a href="#services" class="secondary">Explore Services</a>
+
+          <a href="#contact" class="primary">
+            Let's Talk
+          </a>
+
+          <a href="#services" class="secondary">
+            Explore Services
+          </a>
+
         </div>
+
       </div>
+
     </div>
+
   </section>
 
+
+  <!-- SERVICES -->
+
   <section class="services" id="services">
+
     <div class="container">
-      <div class="section-label">What we do</div>
-      <h2>Bookkeeping made simple.</h2>
+
+      <div class="section-label">
+        What Nexa Provides
+      </div>
+
+      <h2>
+        Financial clarity, organised.
+      </h2>
 
       <p class="section-intro">
-        Reliable financial support so you can spend less time
-        worrying about the numbers and more time growing your business.
+        Click each service below to see what Nexa Accounting
+        provides for your business.
       </p>
+
 
       <div class="service-grid">
 
-        <div class="card">
-          <div class="icon">01</div>
-          <h3>Bookkeeping</h3>
-          <p>
-            Accurate and organised bookkeeping to keep your
-            financial records up to date.
-          </p>
+
+        <!-- 01 -->
+
+        <div class="service-card">
+
+          <button class="service-header">
+
+            <div class="service-number">
+              01
+            </div>
+
+            <div class="service-title">
+
+              <h3>
+                Bookkeeping
+              </h3>
+
+              <p>
+                Accurate financial records
+              </p>
+
+            </div>
+
+            <div class="arrow">
+              ↓
+            </div>
+
+          </button>
+
+          <div class="service-content">
+
+            <div class="service-content-inner">
+
+              <strong>
+                Bookkeeping
+              </strong>
+
+              <br><br>
+
+              Organised recording and maintenance of
+              your business transactions, helping keep
+              your financial records accurate and up to date.
+
+            </div>
+
+          </div>
+
         </div>
 
-        <div class="card">
-          <div class="icon">02</div>
-          <h3>Financial Records</h3>
-          <p>
-            Clear tracking of income, expenses and transactions
-            for better financial visibility.
-          </p>
+
+        <!-- 02 -->
+
+        <div class="service-card">
+
+          <button class="service-header">
+
+            <div class="service-number">
+              02
+            </div>
+
+            <div class="service-title">
+
+              <h3>
+                AP & AR Aging
+              </h3>
+
+              <p>
+                Outstanding balances
+              </p>
+
+            </div>
+
+            <div class="arrow">
+              ↓
+            </div>
+
+          </button>
+
+          <div class="service-content">
+
+            <div class="service-content-inner">
+
+              <strong>
+                Accounts Payable & Receivable Aging
+              </strong>
+
+              <br><br>
+
+              Clear visibility into outstanding customer
+              and supplier balances, helping you monitor
+              collections and payments.
+
+            </div>
+
+          </div>
+
         </div>
 
-        <div class="card">
-          <div class="icon">03</div>
-          <h3>Monthly Support</h3>
-          <p>
-            Ongoing bookkeeping support designed around the
-            needs of your business.
-          </p>
+
+        <!-- 03 -->
+
+        <div class="service-card">
+
+          <button class="service-header">
+
+            <div class="service-number">
+              03
+            </div>
+
+            <div class="service-title">
+
+              <h3>
+                Bank Reconciliation
+              </h3>
+
+              <p>
+                Accurate bank records
+              </p>
+
+            </div>
+
+            <div class="arrow">
+              ↓
+            </div>
+
+          </button>
+
+          <div class="service-content">
+
+            <div class="service-content-inner">
+
+              <strong>
+                Bank Reconciliation
+              </strong>
+
+              <br><br>
+
+              Matching bank transactions against your
+              accounting records to identify differences
+              and maintain accurate balances.
+
+            </div>
+
+          </div>
+
         </div>
 
-        <div class="card">
-          <div class="icon">04</div>
-          <h3>Invoicing</h3>
-          <p>
-            Stay organised with professional invoice and
-            payment tracking.
-          </p>
+
+        <!-- 04 -->
+
+        <div class="service-card">
+
+          <button class="service-header">
+
+            <div class="service-number">
+              04
+            </div>
+
+            <div class="service-title">
+
+              <h3>
+                Expense Analysis
+              </h3>
+
+              <p>
+                Understand your spending
+              </p>
+
+            </div>
+
+            <div class="arrow">
+              ↓
+            </div>
+
+          </button>
+
+          <div class="service-content">
+
+            <div class="service-content-inner">
+
+              <strong>
+                Expense Analysis
+              </strong>
+
+              <br><br>
+
+              Review and categorise business expenses
+              to help identify spending patterns,
+              cost drivers and opportunities for control.
+
+            </div>
+
+          </div>
+
         </div>
 
-        <div class="card">
-          <div class="icon">05</div>
-          <h3>Expense Tracking</h3>
-          <p>
-            Keep business expenses organised and easy to review.
-          </p>
+
+        <!-- 05 -->
+
+        <div class="service-card">
+
+          <button class="service-header">
+
+            <div class="service-number">
+              05
+            </div>
+
+            <div class="service-title">
+
+              <h3>
+                Cash Flow
+              </h3>
+
+              <p>
+                Track your cash position
+              </p>
+
+            </div>
+
+            <div class="arrow">
+              ↓
+            </div>
+
+          </button>
+
+          <div class="service-content">
+
+            <div class="service-content-inner">
+
+              <strong>
+                Cash Flow Reporting
+              </strong>
+
+              <br><br>
+
+              Track cash inflows and outflows to give
+              you a clearer understanding of your
+              business's liquidity and cash position.
+
+            </div>
+
+          </div>
+
         </div>
 
-        <div class="card">
-          <div class="icon">06</div>
-          <h3>Financial Reports</h3>
-          <p>
-            Understand your business with clear and useful
-            financial reports.
-          </p>
+
+        <!-- 06 -->
+
+        <div class="service-card">
+
+          <button class="service-header">
+
+            <div class="service-number">
+              06
+            </div>
+
+            <div class="service-title">
+
+              <h3>
+                P&L & Balance Sheet
+              </h3>
+
+              <p>
+                Understand financial performance
+              </p>
+
+            </div>
+
+            <div class="arrow">
+              ↓
+            </div>
+
+          </button>
+
+          <div class="service-content">
+
+            <div class="service-content-inner">
+
+              <strong>
+                Profit & Loss and Balance Sheet
+              </strong>
+
+              <br><br>
+
+              Clear financial statements showing business
+              performance, financial position and key
+              accounting information.
+
+            </div>
+
+          </div>
+
         </div>
+
 
       </div>
+
     </div>
+
   </section>
 
+
+  <!-- ABOUT -->
+
   <section id="about">
+
     <div class="container">
+
       <div class="about-grid">
 
         <div>
-          <div class="section-label">About Nexa</div>
 
-          <h2>Your numbers deserve clarity.</h2>
+          <div class="section-label">
+            About Nexa
+          </div>
+
+          <h2>
+            Your numbers deserve clarity.
+          </h2>
 
           <p class="section-intro">
-            At Nexa Accounting, we believe bookkeeping should be
-            simple, transparent and stress-free.
+            Nexa Accounting helps businesses keep their
+            financial information organised, understandable
+            and useful.
           </p>
 
           <p class="check">
-            <span>✓</span> Accurate financial records
+            <span>✓</span>
+            Accurate financial records
           </p>
 
           <p class="check">
-            <span>✓</span> Professional and confidential service
+            <span>✓</span>
+            Clear financial reporting
           </p>
 
           <p class="check">
-            <span>✓</span> Modern approach to bookkeeping
+            <span>✓</span>
+            Professional and confidential service
           </p>
 
           <p class="check">
-            <span>✓</span> Personal support for your business
+            <span>✓</span>
+            Personal support for your business
           </p>
+
         </div>
 
+
         <div class="about-box">
-          <div class="section-label">The Nexa approach</div>
-          <h2>Simple. Accurate. Reliable.</h2>
+
+          <div class="section-label">
+            The Nexa approach
+          </div>
+
+          <h2>
+            Simple. Accurate. Reliable.
+          </h2>
 
           <p style="color:#9eafc0;">
-            We take the complexity out of everyday bookkeeping,
-            giving business owners a clearer picture of their finances.
+
+            We take the complexity out of everyday
+            bookkeeping and financial reporting, giving
+            business owners a clearer picture of their
+            numbers.
+
           </p>
+
         </div>
 
       </div>
+
     </div>
+
   </section>
 
+
+  <!-- CONTACT -->
+
   <section class="contact" id="contact">
+
     <div class="container">
+
       <div class="contact-box">
 
-        <div class="section-label">Get in touch</div>
+        <div class="section-label">
+          Get in touch
+        </div>
 
-        <h2>Let's talk about your business.</h2>
+        <h2>
+          Let's talk about your business.
+        </h2>
 
         <p>
+
           Ready to get your bookkeeping organised?
           Contact Isabel at Nexa Accounting.
+
         </p>
 
         <div class="buttons" style="justify-content:center;">
-          <a href="mailto:isabel@nexaaccounting.com" class="primary">
+
+          <a
+            href="mailto:isabel@nexaaccounting.com"
+            class="primary">
+
             Email Isabel
+
           </a>
 
-          <a href="mailto:info@nexaaccounting.com" class="secondary">
+          <a
+            href="mailto:info@nexaaccounting.com"
+            class="secondary">
+
             Contact Nexa
+
           </a>
+
         </div>
 
       </div>
+
     </div>
+
   </section>
 
 </main>
 
+
 <footer>
+
   <div class="container">
+
     © 2026 Nexa Accounting. All rights reserved.
+
   </div>
+
 </footer>
+
+
+<script>
+
+  const cards = document.querySelectorAll(".service-card");
+
+  cards.forEach(card => {
+
+    const button = card.querySelector(".service-header");
+
+    button.addEventListener("click", () => {
+
+      card.classList.toggle("active");
+
+    });
+
+  });
+
+</script>
+
 
 </body>
 </html>
